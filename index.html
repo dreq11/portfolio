@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>my info </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-link" href="#about">about</a>
+        <a class="nav-link" href="#technology">technology</a>
+        <a class="nav-link" href="#contact">contact</a>
+    </nav>
+
+<section id="hero">
+    <div id="hero-text">
+         <h1 id="heading"> my first website</h1>
+         <p>i am learning website designing</p>
+         <button id= "myButton">explore 3d</button>
+    </div>
+
+    <!-- hero section is the first cube section-->
+    <div id="hero-3d">
+        <div id="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+
+</section>
+<section id="feature">
+    <h2> what this website has</h2>
+    <div class="feature-container">
+        <div class="feature-card">
+        <h3> 3d design</h3>
+        <p>A custom 3d cube built with css</p>
+        </div>
+        <div class="feature-card"> 
+        <h3> Interactive</h3>
+         <p>JavaScript makes the website responds to you</p>
+        </div>
+        <div class="feature-card">
+             <h3> modern</h3>
+             <p>A futuristic design built from scratch</p>
+        </div>
+    </div>
+</section>        
+<section id="about">
+    <h2> about this project</h2>
+    <p>A 3D website i build while learning HTML , CSS and JavaScript</p>
+    <div class="about-box">
+        <h3>my goal</h3>
+        <p>to learn how to build creative website from scratch.</p>
+    </div>
+</section>
+<section id="technology">
+    <h2>technology</h2>
+    <p>HTML . CSS . JavaScript</p>
+</section>
+<section id="contact">
+    <h2>get in touch</h2>
+
+    <p>want to comtact me? send me a message</p>
+    <P>Thanks for visiting my website.</P>
+  
+    <!--this is for contact  -->
+    <p id="form-message" class="hidden">message sent successfully!</p>
+    <form
+        id="contact-form" action="https://formspree.io/f/mrpglopp" method="POST">
+        <input type="text" name="name" placeholder="your Name" required>
+        <input type="email" name="email" placeholder="your email" required>
+        <textarea name="message" placeholder="your message" required></textarea>
+        <button type="submit">send message</button>
+    </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+button {
+    padding: 12px;
+    background: #5b21b6;
+    border-radius: 12px;
+}
+body {
+    margin: 0;
+    font-family: arial, sans-serif;
+    color:rgb(197, 118, 118);
+    background: 
+        radial-gradient(circle at 20% 30%, #5b21b6 0%, transparent 35%),
+        radial-gradient(circle at 80% 70%, #1d4ed8 0%, transparent 35%), #050510; 
+}
+/*hero section is the first cube section*/
+#hero {
+     min-height: 80vh;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     padding: 40px;
+}
+#hero-text {
+    max-width: 500px;
+}
+#heading {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+#hero-3d {
+    width: 300px;
+    height:300px;
+    border:2px solid rgb(250, 243, 243);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    perspective: 800px;
+}
+/* 3D CUBE */
+
+#hero-3d {
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 800px;
+}
+
+#cube {
+    width: 150px;
+    height: 150px;
+
+    position: relative;
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+    animation: cubeRotate 5s linear infinite;
+    
+}
+
+.face {
+    width: 150px;
+    height: 150px;
+
+    position: absolute;
+
+    border: 2px solid white;
+    box-shadow: 0 0 15px purple;
+}
+
+/* SIX SIDES */
+
+.front {
+    background: #610bd0;
+    transform: translateZ(75px);
+}
+
+.back {
+    background: #770cdc;
+    transform: rotateY(180deg) translateZ(75px);
+}
+
+.right {
+    background: #4e03a3;
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+.left {
+    background: #823cff;
+    transform: rotateY(-90deg) translateZ(75px);
+}
+
+.top {
+    background: #c084ff;
+    transform: rotateX(90deg) translateZ(75px);
+}
+
+.bottom {
+    background: #32104f;
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+/* ROTATION */
+
+@keyframes cubeRotate {
+
+    from {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+
+}
+#feature {
+    padding: 60px 20px;
+    text-align: center;
+} 
+#feature h2{
+    font-size: 35px;
+}
+section {
+    min-height: 300px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid;
+}
+#feature {
+    text-align: center;
+}
+#about {
+    text-align: left;
+}
+#tecnology {
+    text-align: center;
+}
+.feature-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.feature-card{
+    width: 220px;
+    min-height: 150px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255 , 255 , 255 , 0.2);
+    border-radius:15px ;
+    transition : transform 0.35s ease;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+.feature-card:hover {
+    transform: translateY(-15px)
+    scale(1.12) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 25px 50px rgba(180 , 50 , 255 , 0.5);
+}
+.about-box {
+    max-width: 600px;
+    margin: 30px auto 0;
+    padding: 25px;
+
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255 , 255 , 255 , 0.2);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(150, 50, 255 , 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+}
+.about-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(150, 50, 255 , 0.6);
+}
+#about {
+    text-align: center;
+    min-height: 400px;
+}
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+#about p {
+    max-width: 650px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+#technology {
+    text-align: center;
+}
+#technology p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+nav {
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255 , 255 , 255 , 0.2);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #c77dff;
+}
+html {
+    scroll-behavior:smooth;
+}
+/*contact section*/
+#contact {
+    text-align: center;
+}
+#contact form {
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#contact input, #contact textarea {
+    padding: 15px;
+    border: 1px solid rgba(255 , 255 , 255 , 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size:16px;
+}
+#contact textarea {
+    min-height: 120px;
+    resize:vertical;
+}
+#contact button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: purple;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#contact button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px purple;
+}
+.nav-link.active {
+    color: #c77dff;
+    text-shadow: 0 0 10px purple;
+}
+
+/* hides an element completely - used to hide the success message until the form is actually submitted*/
+.hidden {
+    display: none;
+}
