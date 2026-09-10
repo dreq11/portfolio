@@ -5,47 +5,62 @@ button {
 }
 body {
     margin: 0;
-    font-family: arial, sans-serif;
-    color:rgb(197, 118, 118);
+    font-family: "Poppins", arial, sans-serif;
+    color:rgb(230, 230, 214);
     background: 
         radial-gradient(circle at 20% 30%, #5b21b6 0%, transparent 35%),
         radial-gradient(circle at 80% 70%, #1d4ed8 0%, transparent 35%), #050510; 
 }
-/*hero section is the first cube section*/
+/*hero section is the heading\cube section*/
 #hero {
      min-height: 80vh;
      display: flex;
      align-items: center;
      justify-content: space-around;
-     padding: 40px;
+     padding: 60px 40px;
 }
 #hero-text {
+    flex: 1;
     max-width: 500px;
 }
 #heading {
     font-size: 50px;
     margin-bottom: 15px;
 }
-#hero-3d {
-    width: 300px;
-    height:300px;
-    border:2px solid rgb(250, 243, 243);
+/* big bordered box wrapping the whole hero section */
+.hero-card {
+    max-width: 900px;
+    margin: 40px auto;
+    padding : 40px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255 , 255 , 255 , 0.2);
+    border-radius: 20px;
+}
+
+/* group the cube and heading side by side */
+.hero-top {
     display: flex;
-    align-items:center;
-    justify-content: center;
-    perspective: 800px;
+    align-items: center;
+    gap : 40px;
+    flex-wrap: wrap;
+}
+.hero-description {
+    margin:10px 0 20px;
 }
 /* 3D CUBE */
 
 #hero-3d {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border : 2px solid black;
     perspective: 800px;
+    flex-shrink: 0;
 }
 
 #cube {
@@ -115,7 +130,7 @@ body {
 
 }
 #feature {
-    padding: 60px 20px;
+    padding: 60px 40px;
     text-align: center;
 } 
 #feature h2{
@@ -267,4 +282,33 @@ html {
 /* hides an element completely - used to hide the success message until the form is actually submitted*/
 .hidden {
     display: none;
+}
+
+/* footer at the very bottom. styling it */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+/* styling the eyebrow text that appears above section headings */
+.eyebrow {
+    color: #c77dff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+/*elements start hidden and slighly lower, then fade/slide into the place when scrolled to*/
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
