@@ -10,29 +10,37 @@
         <a class="nav-link" href="#technology">technology</a>
         <a class="nav-link" href="#contact">contact</a>
     </nav>
-
+ 
+    <!--hero my heading section-->
 <section id="hero">
-    <div id="hero-text">
-         <h1 id="heading"> my first website</h1>
-         <p>i am learning website designing</p>
-         <button id= "myButton">explore 3d</button>
-    </div>
-
-    <!-- hero section is the first cube section-->
-    <div id="hero-3d">
-        <div id="cube">
-            <div class="face front"></div>
-            <div class="face back"></div>
-            <div class="face right"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
+    <div class="hero-card">
+        
+        <div class="hero-top">
+              <!-- hero section is the first cube section-->
+            <div id="hero-3d">
+                <div id="cube">
+                 <div class="face front"></div>
+                 <div class="face back"></div>
+                 <div class="face right"></div>
+                 <div class="face left"></div>  
+                 <div class="face top"></div>
+                 <div class="face bottom"></div>
+                </div>
         </div>
-    </div>
+            <div id="hero-text">
+         <h1 id="heading"> my first website</h1>
+        </div>
+     </div>
+    
 
+    <p class="hero-description">Welcome to my 3D website!</p>
+    <button id="mybutton">explore 3d</button>
 </section>
-<section id="feature">
+
+
+<section id="feature" class="reveal">
     <h2> what this website has</h2>
+    <p class="eyebrow">what we offer</p>
     <div class="feature-container">
         <div class="feature-card">
         <h3> 3d design</h3>
@@ -48,22 +56,26 @@
         </div>
     </div>
 </section>        
-<section id="about">
+
+<section id="about" class="reveal">
     <h2> about this project</h2>
+    <p class="eyebrow">the story</p>
     <p>A 3D website i build while learning HTML , CSS and JavaScript</p>
     <div class="about-box">
         <h3>my goal</h3>
         <p>to learn how to build creative website from scratch.</p>
     </div>
 </section>
-<section id="technology">
+<section id="technology" class="reveal">
     <h2>technology</h2>
+    <p class="eyebrow">built with</p>
     <p>HTML . CSS . JavaScript</p>
 </section>
-<section id="contact">
-    <h2>get in touch</h2>
 
-    <p>want to comtact me? send me a message</p>
+<section id="contact" class="reveal">
+    <h2>get in touch</h2>
+    <p class="eyebrow">have a question or want to work together?</p>
+    <p>reach out to me anytime</p>
     <P>Thanks for visiting my website.</P>
   
     <!--this is for contact  -->
@@ -77,6 +89,15 @@
     </form>
 </section>
 
+<!--this adds library of text fonts styling-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!--footer at the end of the website-->
+<footer>
+    <p>&copy; 2026  dawoodkhan. All rights reserved.</p>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
