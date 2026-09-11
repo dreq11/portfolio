@@ -22,6 +22,7 @@ body {
 #hero-text {
     flex: 1;
     max-width: 500px;
+    margin-left: 30px;
 }
 #heading {
     font-size: 50px;
@@ -29,22 +30,34 @@ body {
 }
 /* big bordered box wrapping the whole hero section */
 .hero-card {
-    max-width: 900px;
-    margin: 40px auto;
-    padding : 40px;
+    max-width: 1000px;
+    min-height: 350px;
+    margin: 60px auto;
+    padding : 50px;
     box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255 , 255 , 255 , 0.2);
     border-radius: 20px;
 }
 
+.hero-text-block {
+    flex: 1;
+    min-width: 250px;
+}
+
 /* group the cube and heading side by side */
 .hero-top {
     display: flex;
     align-items: center;
-    gap : 40px;
-    flex-wrap: wrap;
+    gap : 60px;
+    flex-wrap: nowrap;
 }
 .hero-description {
     margin:10px 0 20px;
@@ -52,15 +65,16 @@ body {
 /* 3D CUBE */
 
 #hero-3d {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    border : 2px solid black;
+    border-radius: 50%;
     perspective: 800px;
-    flex-shrink: 0;
+    background: radial-gradient(circle, rgba(150, 50, 255, 0.25) 0%,transparent 70%);
 }
 
 #cube {
