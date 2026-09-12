@@ -77,3 +77,16 @@ contactForm.addEventListener("submit", function(event) {
         alert("something went wrong.please try agian.");
     });
 });
+
+/* watches each .reveal section and there opacity incrases as they gets into view so they can be visible */
+const revealElements = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible"); }
+        });
+    }, { threshold: 0.15 });
+
+revealElements.forEach(function(element) {
+    revealObserver.observe(element);
+});
