@@ -1,3 +1,4 @@
+
 button {
     padding: 12px;
     background: #5b21b6;
@@ -51,14 +52,24 @@ body {
 
 }
 
-/* hero tech is the html java and script heading*/
+/* hero tech is the images of css java html*/
 .hero-tech {
     display: flex;
     gap: 20px;
     font-size: 13px;
-    opacity: 0.6;
+    opacity: 0.8;
     margin-top: 30px;
     letter-spacing: 1px;
+}
+.tech-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.tech-icon:hover {
+    opacity: 1;
+    transform: translateY(-5px);
 }
 #heading {
     font-size: 64px;
