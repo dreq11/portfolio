@@ -48,6 +48,7 @@ navlinks.forEach(function(link){
     }
  });
 });
+window.dispatchEvent(new Event("scroll"));
 
 /*contact form _ stops  the page from navigation away on submit, sends the data in the background instead,and show the success message */
 const contactForm = document.getElementById("contact-form");
