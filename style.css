@@ -22,32 +22,35 @@ body {
 }
 /*hero section is the heading\cube section*/
 #hero {
-     min-height: 80vh;
-     padding: 120px 8%;
+     min-height: 90vh;
+     padding: 120px 30% 80px 5%; 
      box-sizing: border-box;
 
-     display: flex;
-     align-items: flex-start;
-     justify-content: space-around;
-     gap: 60px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     align-items: start;
+     gap: 20px; 
 }
-#hero-text {
+.hero-text {
     flex: 1;
     max-width: 600px;
     margin-left: 40px;
 }
+.hero-text {
+    grid-area: heading;
+    margin-left: 0;
+}
+
 /* css for welcome to my website*/
-#hero-text ::before {
-    content: "hi i am daves";
-    display: block;
+#hero-intro {
     color: #a855f7;
     font-size: 15px;
     font-weight: bold;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 15px;
 
 }
+
 /* hero tech is the html java and script heading*/
 .hero-tech {
     display: flex;
@@ -59,11 +62,14 @@ body {
 }
 #heading {
     font-size: 64px;
-    line-height: 1.05;
+    line-height: 1;
     font-weight: 800;
-    margin-bottom: 15px;
-
-    background: linear-gradient(90deg, #ffffff, #c77dff, #60a5fa);
+    margin-bottom: 0 0 25px;
+    color: white;
+    letter-spacing: -3px;
+}
+#heading span {
+    background: linear-gradient(90deg, #a855f7, #6366f1, #38bdf8);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -71,45 +77,24 @@ body {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
      0 0 30px rgba(124, 58, 237, 0.35),;
 }
-/* big bordered box wrapping the whole hero section */
-.hero-card {
-    max-width: 1100px;
-    min-height: 500px;
-    margin: 60px auto;
-    padding : 50px;
-    box-sizing: border-box;
-    
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    grid-template-areas: 
-        "cube heading"
-        "cube description"
-        "cube button";
-    align-items: center;
-    column-gap: 60px;
 
-    background: transparent;
-    border: none;
-    border-radius: 0;
-}
 
 .hero-text-block {
     flex: 1;
     min-width: 250px;
 }
 
-/* group the cube and heading side by side */
-.hero-top {
-    display: flex;
-    align-items: center;
-    gap : 60px;
-    flex-wrap: nowrap;
-}
 .hero-description {
+    margin-top: 0px;
+    display: block;
+}
+
+.hero-description {
+    max-width: 500px;
     font-size: 18px;
-    margin:10px 0 20px;
-    opacity: 0.8;
-    line-height: 1.6;  
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.75;  
 }
 /* 3D CUBE */
 
@@ -120,9 +105,10 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     border-radius: 50%;
     perspective: 800px;
+    transform: translateY(60px) translateX(450px);
     background: radial-gradient(circle, rgba(150, 50, 255, 0.3) 0%,transparent 70%);
 }
 
@@ -133,14 +119,7 @@ body {
 #hero-3d {
     grid-area: cube;
 }
-#hero-text {
-    grid-area: heading;
-    margin-left: 0;
-}
-.hero-description {
-    grid-area: description;
-    margin: 0;
-}
+
 #mybutton {
     grid-area: button;
     justify-self: start;
