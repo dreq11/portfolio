@@ -91,3 +91,74 @@ const revealObserver = new IntersectionObserver(function(entries) {
 revealElements.forEach(function(element) {
     revealObserver.observe(element);
 });
+
+/* scractch the card to reveal. code to make it work */
+const scratchCards = document.querySelectorAll(".feature-card");
+
+scratchCards.forEach(function(card) {
+
+    const canvas = card.querySelector(".scratch-cover");
+    const ctx = canvas.getContext("2d");
+
+    // Make canvas match the card exactly
+    const width = card.clientWidth;
+    const height = card.clientHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+
+    // Black surface
+    ctx.fillStyle = "#08080f";
+    ctx.fillRect(0, 0, width, height);
+
+    // Neon border glow
+    ctx.strokeStyle = "#a855f7";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(1, 1, width - 2, height - 2);
+
+    // Scratch text
+    ctx.fillStyle = "#a855f7";
+    ctx.font = "bold 16px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("SCRATCH HERE", width / 2, height / 2);
+
+    let scratching = false;
+
+    canvas.addEventListener("pointerdown", function(event) {
+        scratching = true;
+        canvas.setPointerCapture(event.pointerId);
+        scratch(event);
+    });
+
+    canvas.addEventListener("pointermove", function(event) {
+        if (!scratching) return;
+        scratch(event);
+    });
+
+    canvas.addEventListener("pointerup", function() {
+        scratching = false;
+    });
+
+    canvas.addEventListener("pointercancel", function() {
+        scratching = false;
+    });
+
+    function scratch(event) {
+
+        const rect = canvas.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        ctx.globalCompositeOperation = "destination-out";
+
+        ctx.beginPath();
+        ctx.arc(x, y, 22, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+});
