@@ -129,13 +129,13 @@ scratchCards.forEach(function(card) {
     let scratching = false;
 
     canvas.addEventListener("pointerdown", function(event) {
-        scratching = true;
+        Scratching = true;
+
         canvas.setPointerCapture(event.pointerId);
         scratch(event);
     });
 
     canvas.addEventListener("pointermove", function(event) {
-        if (!scratching) return;
         scratch(event);
     });
 
@@ -154,11 +154,11 @@ scratchCards.forEach(function(card) {
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
 
-        ctx.globalCompositeOperation = "destination-out";
+        ctx.globalCompositeOperation = "destination-out"; 
 
         ctx.beginPath();
-        ctx.arc(x, y, 22, 0, Math.PI * 2);
+        ctx.arc(x, y, 40, 0, Math.PI * 2);
         ctx.fill();
-    }
+        }
 
 });
