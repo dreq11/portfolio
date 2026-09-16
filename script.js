@@ -136,7 +136,12 @@ scratchCards.forEach(function(card) {
     });
 
     canvas.addEventListener("pointermove", function(event) {
+        if(event.pointerType === "mouse") {
+            scratch(event);
+        }
+        if (event.pointerType === "touch" && isScratching) {
         scratch(event);
+        }
     });
 
     canvas.addEventListener("pointerup", function() {
