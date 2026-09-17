@@ -218,9 +218,7 @@ section {
 #feature {
     text-align: center;
 }
-#about {
-    text-align: left;
-}
+
 #tecnology {
     text-align: center;
 }
@@ -290,6 +288,9 @@ section {
     box-shadow: 0 0 25px rgba(150, 50, 255 , 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+#about {
+    text-align: left;
+}
 .about-box:hover {
     transform: translateY(-8px);
     box-shadow: 0 0 40px rgba(150, 50, 255 , 0.6);
@@ -307,6 +308,47 @@ section {
     margin: 10px auto;
     line-height: 1.6;
 }
+         
+        /* about section. for learned section*/
+
+.learning-box {
+    margin-top: 35px;
+    padding: 30px;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: 20px;
+    background: rgba (20, 10, 45, 0.7);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.15);
+}
+
+.learning-box h3 {
+    text-align: center;
+    color: #c084fc;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+.learning-iteam {
+    margin: 18px 0;
+    padding: 18px;
+    border-left: 3px solid #a855f7;
+    border-radius: 10px;
+    background: rgba(168, 85, 247, 0.08);
+   transition: transform 0.3s ease, background 0.3s ease; 
+}
+.learning-iteam:hover {
+    transform: translateX(10px);
+    background: rgba(168, 85, 247, 0.2);
+}
+.learning-iteam h4 {
+    color: #c084fc;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.learning-iteam p {
+    color: rgba(255, 255, 255,0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
 #technology {
     text-align: center;
 }
