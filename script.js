@@ -167,3 +167,18 @@ scratchCards.forEach(function(card) {
         }
 
 });
+
+// wave animation for webpage/ connecting button to page//
+
+const exploreButton = document.getElementById("mybutton");
+const wave = document.getElementById("wave-transition");
+
+exploreButton.addEventListener("click", function() {
+
+    document.body.classList.add("page-lift");
+
+    setTimeout(function() {
+        location.reload();
+    }, 1500);
+
+});
