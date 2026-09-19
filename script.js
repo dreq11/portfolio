@@ -168,17 +168,27 @@ scratchCards.forEach(function(card) {
 
 });
 
-// wave animation for webpage/ connecting button to page//
-
+/* wave transition: rises to cover the screen, reloads underneath it, then recedes to reveal the fresh page */
+const waveTransition = document.getElementById("wave-transition");
 const exploreButton = document.getElementById("mybutton");
-const wave = document.getElementById("wave-transition");
 
-exploreButton.addEventListener("click", function() {
+if (exploreButton && waveTransition) {
+    exploreButton.addEventListener("click", function () {
+        waveTransition.classList.add("rising");
 
-    document.body.classList.add("page-lift");
+        waveTransition.addEventListener("animationend", function handler() {
+            waveTransition.removeEventListener("animationend", handler);
+            sessionStorage.setItem("playWaveReveal", "true");
+            location.reload();
+        });
+    });
+}
 
-    setTimeout(function() {
-        location.reload();
-    }, 1500);
-
+window.addEventListener("DOMContentLoaded", function () {
+    if (sessionStorage.getItem("playWaveReveal") === "true" && waveTransition) {
+        sessionStorage.removeItem("playWaveReveal");
+        waveTransition.style.transform = "translateY(0%)";
+        void waveTransition.offsetWidth;
+        waveTransition.classList.add("receding");
+    }
 });
