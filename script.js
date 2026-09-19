@@ -168,27 +168,18 @@ scratchCards.forEach(function(card) {
 
 });
 
-/* wave transition: rises to cover the screen, reloads underneath it, then recedes to reveal the fresh page */
-const waveTransition = document.getElementById("wave-transition");
+/* wave transition: rises to cover the screen, reloads underneath it, then recedes to reveal the fresh page *//* wave distortion effect: ripples the actual page content like paper on water, then reloads mid-ripple */
+/* rolling band sweeps down the page once, reloads when it reaches the bottom */
+const waveRoll = document.getElementById("wave-roll");
 const exploreButton = document.getElementById("mybutton");
 
-if (exploreButton && waveTransition) {
+if (exploreButton && waveRoll) {
     exploreButton.addEventListener("click", function () {
-        waveTransition.classList.add("rising");
+        waveRoll.classList.add("rolling");
 
-        waveTransition.addEventListener("animationend", function handler() {
-            waveTransition.removeEventListener("animationend", handler);
-            sessionStorage.setItem("playWaveReveal", "true");
+        waveRoll.addEventListener("animationend", function handler() {
+            waveRoll.removeEventListener("animationend", handler);
             location.reload();
         });
     });
 }
-
-window.addEventListener("DOMContentLoaded", function () {
-    if (sessionStorage.getItem("playWaveReveal") === "true" && waveTransition) {
-        sessionStorage.removeItem("playWaveReveal");
-        waveTransition.style.transform = "translateY(0%)";
-        void waveTransition.offsetWidth;
-        waveTransition.classList.add("receding");
-    }
-});
