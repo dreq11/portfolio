@@ -516,22 +516,37 @@ footer {
 }
 
 /* wave transition when reload of webpage*/
-
-body.page-lift {
-    animation: pageLift 1.5s ease-in-out forwards;
-    transform-origin: bottom center;
+    #wave-transition {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    transform: translateY(100%);
+    z-index: 9999;
+    pointer-events: none;
 }
-
-@keyframes pageLift {
-    0% {
-        transform: perspective(1200px) rotateX(0deg);
-    }
-    50% {
-        transform: perspective(1200px) rotateX(-15deg)
-        translateY(-40px);
-    }
-    100% {
-        transform: perspective(1200px) rotateX(0deg)
-        translateY(-100vh);
-    }
+#wave-transition svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+#wave-fill {
+    background: #5b21b6;
+    height: 100%;
+    margin-top: -1px;
+}
+#wave-transition.rising {
+    animation: waveRise 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+#wave-transition.receding {
+    animation: waveRecede 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+@keyframes waveRise {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0%); }
+}
+@keyframes waveRecede {
+    from { transform: translateY(0%); }
+    to   { transform: translateY(100%); }
 }
