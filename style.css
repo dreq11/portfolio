@@ -72,6 +72,20 @@ body {
     margin-bottom: 15px;
 }
 
+.sidebar-links a {
+    display: block;             /* places each link on a brand new line (on top of each other ig)*/
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+/* the magic interactive trigger*/
+.sidebar.active {
+    left: 0;
+}
+
 /* brand logo styling*/
 .brand-name {
     font-weight: 700;
