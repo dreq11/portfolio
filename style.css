@@ -51,6 +51,17 @@ body {
     transition: left 0.3s ease;  /* slide animation tracing to left position*/
 }
 
+/*2. the close (X) button */
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
 /* brand logo styling*/
 .brand-name {
     font-weight: 700;
