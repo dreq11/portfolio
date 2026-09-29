@@ -18,7 +18,7 @@ body {
 
 /* nav bar styling*/
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -32,9 +32,9 @@ body {
 }
 /* 3-lines menu on left*/
 .nav-left {
-    display: flex;
+    display: flex;          /* forces childrens to sit horizontaly in a row*/
     align-items: center;
-    position: absolute;
+    flex-direction: row;
     gap: 20px;
 }
 /* sttylig of 3-lines*/
