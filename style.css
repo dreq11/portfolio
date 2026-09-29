@@ -38,7 +38,7 @@ body {
     gap: 20px;
 }
 /* sttylig of 3-lines*/
-#menu-toggle {
+.menu-toggle {
     background: none;
     position: absolute;
     border: none;
