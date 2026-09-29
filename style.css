@@ -27,6 +27,8 @@ body {
     align-items: center;
     padding: 20px 40px;
     border-bottom: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    z-index: 999;
 }
 /* 3-lines menu on left*/
 .nav-left {
